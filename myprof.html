@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="tail.css">
+    <title>Bidco farm</title>
+    <script>  
+        function validateForm() {  
+            //collect form data in JavaScript variables  
+            var pw1 = document.getElementById("password").value;  
+            var pw2 = document.getElementById("Confirmpass").value;  
+            var name1 = document.getElementById("Firstname").value;  
+            var name2 = document.getElementById("Lastname").value;  
+              
+            //check empty first name field  
+            if(name1 == "") {  
+              document.getElementById("blankMsg").innerHTML = "**Fill the first name";  
+              return false;  
+            }  
+              
+            //character data validation  
+            if(!isNaN(name1)){  
+              document.getElementById("blankMsg").innerHTML = "**Only characters are allowed";  
+              return false;  
+            }  
+          
+           //character data validation  
+            if(!isNaN(name2)){  
+              document.getElementById("charMsg").innerHTML = "**Only characters are allowed";  
+              return false;  
+            }   
+            
+            //check empty password field  
+            if(pw1 == "") {  
+              document.getElementById("message1").innerHTML = "**Fill the password please!";  
+              return false;  
+            }  
+            
+            //check empty confirm password field  
+            if(pw2 == "") {  
+              document.getElementById("message2").innerHTML = "**Enter the password please!";  
+              return false;  
+            }   
+             
+            //minimum password length validation  
+            if(pw1.length < 8) {  
+              document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";  
+              return false;  
+            }  
+          
+            //maximum length of password validation  
+            if(pw1.length > 15) {  
+              document.getElementById("message1").innerHTML = "**Password length must not exceed 15 characters";  
+              return false;  
+            }  
+            
+            if(pw1 != pw2) {  
+              document.getElementById("message2").innerHTML = "**Passwords are not same";  
+              return false;  
+            } else {  
+              alert ("Your password created successfully");   
+            }  
+         }  
+        </script> 
+</head><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<body>
+    <div class="signupfrm">
+        <form action="hello.php" method="POST" class="form">
+            <h3 class="title2">MY PROFILE</h3>
+            <div class="inputcontainer">
+                <input type="text"class="input"placeholder="a" name="Firstname"required>
+                <label for=""class="label">FIRST NAME:</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="text"class="input"placeholder="a" name="Middlename">
+                <label for=""class="label">MIDDLE NAME:</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="text"class="input"placeholder="a" name="Lastname" required>
+                <label for=""class="label">SURNAME NAME:</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="email"class="input"placeholder="a" name="Email" required>
+                <label for=""class="label">EMAIL:</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="text"class="input"placeholder="a" name="idno" required>
+                <label for=""class="label">ID NUMBER:</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="date"class="input" id="passw1"placeholder="a" name="dob" required>
+                <label for=""class="label">DATE OF BIRTH:</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="text"class="input"id="passw2"placeholder="a" name="area" required>
+                <label for=""class="label">LOCATION:</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="text"class="input"id="passw2"placeholder="a" name="phone" required>
+                <label for=""class="label">PHONE NUMBER:</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="text"class="input"id="passw2"placeholder="a" name="address" required>
+                <label for=""class="label">ADDRESS:</label>
+            </div>
+            <input type="submit"class="submitbtn"value="SUBMIT" name="hello">
+            <button type="reset"class="resetbtn" value="RESET">CANCEL</button>
+        </form>
+    </div>
+</body>
+</html>
